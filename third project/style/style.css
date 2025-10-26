@@ -1,0 +1,172 @@
+/* =========================
+   Root Variables
+========================= */
+:root {
+  --main-color: #3563E9;
+  --text-color: #000000;
+  --light-gray: #F6F7F9;
+  --white: #fff;
+  --border-radius: 50px;
+  --det-text: #cfc6c6;
+}
+
+/* =========================
+   Base Styles
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--light-gray);
+  color: var(--text-color);
+}
+
+/* =========================
+   Utility Classes
+========================= */
+
+/* Layout */
+.container { width: 80%; margin: 0 auto; }
+.flex { display: flex; }
+.wrap { flex-wrap: wrap; }
+.center { align-items: center; justify-content: center; }
+.between { justify-content: space-between; align-items: center; }
+
+/* Widths */
+.w-full { width: 100%; }
+.w-25 { width: 25%; }
+.w-40 { width: 40%; }
+.w-50 { width: 50%; }
+.w-60 { width: 60%; }
+.w-350 { width: 350px; }
+
+/* Spacing */
+.p-10 { padding: 10px; }
+.p-15 { padding: 15px; }
+.p-20 { padding: 20px; }
+.p-30 { padding: 30px; }
+.py-15 { padding: 15px 0; }
+.px-14 { padding: 0 14px; }
+
+.m-20 { margin: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-60 { margin-bottom: 60px; }
+.mt-10 { margin-top: 10px; }
+.mt-40 { margin-top: 40px; }
+.ml-8 { margin-left: 8px; }
+.ml-25 { margin-left: 25%; }
+
+/* Border Radius */
+.rounded { border-radius: var(--border-radius); }
+.rounded-b-20 { border-radius: 0 0 20px 20px; }
+.rounded-full { border-radius: 50%; }
+
+/* Font & Text */
+.font-main { font-family: "Poppins", sans-serif; }
+.text-main { color: var(--main-color); }
+.text-dark { color: var(--text-color); }
+.text-white { color: var(--white); }
+.text-gray { color: #90A3BF; font-size: 3vw; }
+.text-det { color: var(--det-text); }
+.text-center { text-align: center; }
+.fs-1w{font-size: 1vw;}
+.fs-2w{font-size: 2vw;}
+.fs-3w{font-size: 3vw;}
+.fs-16 { font-size: 16px; }
+.fs-20 { font-size: 20px; }
+.fs-50 { font-size: 50px; }
+.fs-100 { font-size: 100%; }
+.fs-150 { font-size: 150%; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+
+/* Backgrounds */
+.bg-white { background: var(--white); }
+.bg-main { background: var(--main-color); }
+.bg-light { background: var(--light-gray); }
+.bg-light-gray { background: #F3F5F7; }
+.bg-none { background: none; }
+
+/* Buttons & Inputs */
+p{font-size: 1.2vw;}
+h2{font-size: 2.8vw;}
+h4{font-size: 2vw;}
+.btn {
+  background: var(--main-color);
+  color: var(--white);
+  min-width: 60px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 2px solid #fff;
+  font-size: 1.5vw;
+}
+.btn.white {
+  background: var(--white);
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  font-size: 2vw;
+}
+
+/* Inputs */
+.no-border { border: none; }
+.input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--light-gray);
+  font-size: 1vw;
+}
+
+/* Shadow & Borders */
+.shadow-sm { box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.bt-1 { border-top: 1px solid #ddd; }
+
+/* =========================
+   Navbar
+========================= */
+.logo { font-weight: 700; font-size: 3vw;}
+.nav-btn{margin: 5%;}
+.nav-btn img { width: 4vw }
+
+/* =========================
+   Hero Section
+========================= */
+.hero-img { width: 63%; max-height: 100%; }
+
+/* =========================
+   Car Cards
+========================= */
+.car-card { min-width: 250px; max-width: 450px; margin: 2%; }
+.car-card *{margin: 1%;}
+
+.fav { font-size: 18px; display: flex; justify-content: space-between;}
+.fav i{ color: #90A3BF;}
+.car-card img { width: 100%; height: auto; }
+.car-card p {  color: #90A3BF;  }
+
+/* =========================
+   Footer
+========================= */
+.footer-links a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 1vw;
+}
+.footer-links a:hover { color: var(--main-color); }

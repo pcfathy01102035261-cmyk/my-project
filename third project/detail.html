@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morent — Car Detail</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style/detail.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav-wrapper">
+    <div class="container flex jus-bet item-c ">
+      <div class="logo">MORENT</div>
+
+      <div class="search-box flex item-c">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Search something here" />
+      </div>
+
+      <div class="nav-actions flex">
+        <button class="nav-btn"><i class="fa-regular fa-heart"></i></button>
+        <button class="nav-btn"><i class="fa-regular fa-bell"></i></button>
+        <div class="avatar"><img src="imeges/Image.png" alt="">></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="container flex">
+
+    <!-- Sidebar -->
+    <aside class="sidebar w-20">
+      <div class="side-card">
+        <h4>Type</h4>
+        <ul class="filters">
+          <li><label><input type="checkbox"> Sport <span class="count">10</span></label></li>
+          <li><label><input type="checkbox"> SUV <span class="count">12</span></label></li>
+          <li><label><input type="checkbox"> MPV <span class="count">2</span></label></li>
+          <li><label><input type="checkbox"> Sedan <span class="count">14</span></label></li>
+          <li><label><input type="checkbox"> Coupe <span class="count">2</span></label></li>
+        </ul>
+      </div>
+
+      <div class="side-card mt-18">
+        <h4>Capacity</h4>
+        <ul class="filters">
+          <li><label><input type="checkbox"> 2 Person <span class="count">10</span></label></li>
+          <li><label><input type="checkbox"> 4 Person <span class="count">18</span></label></li>
+          <li><label><input type="checkbox"> 6 Person <span class="count">22</span></label></li>
+        </ul>
+      </div>
+
+      <div class="side-card mt-18">
+        <h4>Price</h4>
+        <div class="price-range">
+          <div class="price-labels">
+            <span>Min</span>
+            <span class="max-label">Max $100.00</span>
+          </div>
+          <div class="range-track"><div class="range-thumb"></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ================= Car Detail Section ================= -->
+    <section class="detail-col flex container">
+
+      <div class="flex item-s flex item-c jus-bet">
+        <div class="promo-card flex jus-bet item-c w-50">
+          <div class="promo-head">Sports car with the best design and acceleration</div>
+          <div class="promo-text">Safety and comfort while driving, advanced technologies and performance.</div>
+
+          <div class="promo-thumbs">
+            <img src="imeges/car1.png" alt="car" class="promo-main">
+            <div class="thumbs-row flex jus-bet item-c">
+              <img src="imeges/View 2.png" alt="t1">
+              <img src="imeges/View 3.png" alt="t2">
+              <img src="imeges/View 2.png" alt="t3">
+            </div>
+          </div>
+        </div>
+
+        <!-- Car Info -->
+        <div class="info-card w-50">
+          <div class="title-row flex item-c jus-bet">
+            <h2>Nissan GT - R</h2>
+            <div class="fav"><i class="fa-regular fa-heart"></i></div>
+          </div>
+
+          <div class="rating-row flex item-c jus-bet">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="reviews-count">4.9 (120 reviews)</div>
+          </div>
+
+          <p class="desc">
+            NISMO has become the embodiment of Nissan’s outstanding performance,
+            inspired by the most unforgiving proving ground: the “racetrack”.
+          </p>
+
+          <ul class="specs">
+            <li><i class="fa-solid fa-car"></i> <strong>Type:</strong> Sport</li>
+            <li><i class="fa-solid fa-user-group"></i> <strong>Capacity:</strong> 2 Person</li>
+            <li><i class="fa-solid fa-gear"></i> <strong>Steering:</strong> Manual</li>
+            <li><i class="fa-solid fa-gas-pump"></i> <strong>Fuel:</strong> Gasoline</li>
+            <li><i class="fa-solid fa-oil-can"></i> <strong>Tank:</strong> 70L</li>
+          </ul>
+
+          <div class="flex jus-bet item-c">
+            <div class="price">$80.00 <span class="per">/ day</span></div>
+            <a href="#" class="primary-btn">Rent Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Reviews ================= -->
+      <div class="reviews-card container-full">
+        <div class="reviews-head flex jus-bet item-c">
+          <h3>Reviews</h3>
+          <div class="reviews-badge">4.9</div>
+        </div>
+
+        <div class="review-item flex">
+          <div class="avatar-sm flex item-c"><img src="imeges/Image.png" alt=""></div>
+          <div class="review-body">
+            <div class="review-name">Alex Stanton <span class="review-date">• 14 Mar 2023</span></div>
+            <div class="review-text">This car is amazing, smooth driving, and great fuel economy. The service was fast and staff friendly.</div>
+          </div>
+        </div>
+
+        <div class="review-item flex">
+          <div class="avatar-sm flex item-c"><img src="imeges/Image.png" alt=""></div>
+          <div class="review-body">
+            <div class="review-name">Skylar Dias <span class="review-date">• 02 Jun 2023</span></div>
+            <div class="review-text">Comfortable seats and superb performance on highways. Highly recommended.</div>
+          </div>
+        </div>
+
+        <div class="show-all">Show all</div>
+      </div>
+
+      <!-- ================= Related Cars ================= -->
+      <div class="related-section container-full">
+        <div class="related-head flex jus-bet item-c">
+          <h3>Recent Car</h3>
+          <a href="#" class="view-all">View All</a>
+        </div>
+
+        <div class="related-grid flex jus-bet item-c">
+          <div class="car-card">
+            <div class="fav"><h4>Koenigsegg</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car1.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$99.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+             <div class="fav"><h4>Nissan GT - R</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car2.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$80.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+         <div class="car-card">
+            <div class="fav"><h4>Koenigsegg</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car1.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$99.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+             <div class="fav"><h4>Nissan GT - R</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car2.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$80.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+         <div class="car-card">
+            <div class="fav"><h4>Koenigsegg</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car1.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$99.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+             <div class="fav"><h4>Nissan GT - R</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car2.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$80.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+         <div class="car-card">
+            <div class="fav"><h4>Koenigsegg</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car1.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$99.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+             <div class="fav"><h4>Nissan GT - R</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car2.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$80.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+         <div class="car-card">
+            <div class="fav"><h4>Koenigsegg</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car1.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$99.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+             <div class="fav"><h4>Nissan GT - R</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car2.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$80.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+         <div class="car-card">
+            <div class="fav"><h4>Koenigsegg</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car1.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$99.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+          <div class="car-card">
+             <div class="fav"><h4>Nissan GT - R</h4>
+              <i class="fa-regular fa-heart"></i></div>
+            <div class="meta">Sport • 2 Person</div>
+            <img src="imeges/car2.png" alt="">
+            <img src="imeges/detail.png" alt="">
+            <div class="flex  jus-bet item-c">
+              <div class="card-price">$80.00</div>
+              <a href="#" class="small-btn">Rent Now</a>
+            </div>
+          </div>
+
+         
+        </div>
+      </div>
+
+    </section>
+    </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <h3>MORENT</h3>
+        <p>Our vision is to provide convenience and help increase your sales business.</p>
+      </div>
+
+      <div class="footer-links flex">
+        <div>
+          <h4>About</h4>
+          <a href="#">How it works</a>
+          <a href="#">Featured</a>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <a href="#">Events</a>
+          <a href="#">Blog</a>
+        </div>
+        <div>
+          <h4>Socials</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>©2025 MORENT. All rights reserved</div>
+      <div class="footer-right-links">
+        <a href="#">Privacy & Policy</a>
+        <a href="#">Terms & Condition</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

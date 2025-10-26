@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F6F7F9;
+  color: #1A202C;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container-full {
+  width: 100%;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.w-20{
+  width: 20%;
+}
+
+.w-50{
+  width: 50%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-c{
+  align-items: center;
+}
+
+.item-s{
+  align-items: start;
+}
+
+.jus-bet{
+  justify-content: space-between;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.nav-wrapper {
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 0 0 20px 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3563E9;
+}
+
+.search-box {
+  background: #F3F5F7;
+  padding: 8px 14px;
+  border-radius: 12px;
+  width: 350px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 8px;
+  width: 80%;
+  font-size: 14px;
+}
+
+.search-icon {
+  color: #90A3BF;
+  font-size: 16px;
+}
+
+
+
+.nav-btn {
+  background: #F3F5F7;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  
+  font-size: 16px;
+  color: #90A3BF;
+}
+
+.nav-btn:hover {
+  background: #E0E6F6;
+  color: #3563E9;
+}
+
+.avatar {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+/* =======================
+   SIDEBAR
+======================= */
+
+.side-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.side-card h4 {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.filters li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #596780;
+}
+
+.filters input {
+  margin-right: 8px;
+}
+
+.count {
+  float: right;
+  color: #90A3BF;
+}
+
+.price-labels {
+  font-size: 14px;
+  color: #596780;
+}
+
+.range-track {
+  height: 5px;
+  background: #E0E6F6;
+  border-radius: 10px;
+  margin-top: 8px;
+  position: relative;
+}
+
+.range-thumb {
+  width: 40%;
+  height: 100%;
+  background: #3563E9;
+  border-radius: 10px;
+}
+
+/* =======================
+   DETAIL SECTION
+======================= */
+
+
+/* Top Cards */
+
+
+
+/* Promo Card (Left) */
+.promo-card {
+  background: #3563E9;
+  color: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 50%;
+}
+
+.promo-head {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.promo-text {
+  font-size: 14px;
+  margin: 10px 0 20px;
+  opacity: 0.9;
+}
+
+
+.promo-main {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.thumbs-row {
+  margin-top: 10px;
+}
+
+.thumbs-row img {
+  width: 60px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.thumbs-row img:hover {
+  transform: scale(1.05);
+}
+
+/* Info Card (Right) */
+.info-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+
+
+.title-row h2 {
+  font-size: 20px;
+  color: #1A202C;
+}
+
+.fav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fav i{
+ color: #90A3BF;
+}
+
+.rating-row {
+  margin-top: 8px;
+  color: #FFB800;
+}
+
+.reviews-count {
+  font-size: 14px;
+  color: #90A3BF;
+}
+
+.desc {
+  font-size: 14px;
+  color: #596780;
+  margin: 15px 0;
+}
+
+.specs li {
+  font-size: 14px;
+  color: #1A202C;
+  margin-bottom: 6px;
+}
+
+.specs i {
+  color: #3563E9;
+  margin-right: 6px;
+}
+
+.price-row {
+  margin-top: 18px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.primary-btn {
+  background: #3563E9;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: #244BCC;
+}
+
+/* =======================
+   REVIEWS
+======================= */
+.reviews-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.reviews-head {
+  margin-bottom: 15px;
+}
+
+.reviews-badge {
+  background: #3563E9;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+}
+
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  background: #E0E6F6;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #3563E9;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.review-date {
+  color: #90A3BF;
+  font-weight: 400;
+}
+
+.review-text {
+  font-size: 14px;
+  color: #596780;
+}
+
+.show-all {
+  text-align: center;
+  font-weight: 500;
+  color: #3563E9;
+  
+  margin-top: 10px;
+}
+
+/* =======================
+   RELATED CARS
+======================= */
+.related-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.related-head {
+  margin-bottom: 15px;
+}
+
+
+.car-card {
+  border: gray;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  margin: 1%;
+  width: 48%;
+  max-width: 300px;
+
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.meta {
+  color: #90A3BF;
+  font-size: 13px;
+  margin: 4px 0 8px;
+}
+
+.small-btn {
+  background: #3563E9;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.small-btn:hover {
+  background: #244BCC;
+}
+
+.s-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.s-price {
+  color: #3563E9;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer {
+  background: #fff;
+  margin-top: 50px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.footer-brand h3 {
+  color: #3563E9;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #596780;
+  max-width: 250px;
+}
+
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #1A202C;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 14px;
+  color: #596780;
+  margin-bottom: 5px;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: #3563E9;
+}
+
+.footer-bottom {
+  border-top: 1px solid #E0E6F6;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #596780;
+}
+
+.footer-right-links a {
+  margin-left: 15px;
+  color: #596780;
+  transition: 0.2s;
+}
+
+.footer-right-links a:hover {
+  color: #3563E9;
+}
