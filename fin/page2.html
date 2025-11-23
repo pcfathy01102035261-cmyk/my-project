@@ -1,0 +1,2765 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Product — High-Performance Carbon Fiber Wheels</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#e53935;
+      --muted:#6c757d;
+      --card-radius:12px;
+      --shadow: 0 8px 30px rgba(17,17,17,.06);
+    }
+
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#fafafa;
+      margin:0;
+      color:#111;
+    }
+
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+
+      /* Top Bar */
+        .top-bar {
+            background-color: #000 !important;
+            color: #fff !important;
+            border-bottom: 1px solid #333;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .text-white {
+            color: #fff !important;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background-color: #fff !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            height: 100px;
+            overflow-y: visible;
+        
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #333 !important;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            width: 100%; 
+    padding: 10px;
+    background: white;
+    z-index: 1001;
+    
+    border-radius: 5px 5px 0 0;
+
+        }
+
+        .search-category-group {
+            position: relative;
+            padding: 5px;
+            width: 100%;
+          
+        }
+
+        /* صندوق الـ popular search */
+        .popular-box {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 15px;
+            display: none;
+            z-index: 1001;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 0 0 5px 5px;
+            border-top: 1px solid #eee;
+        }
+
+        .suggestionsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .popular-box a {
+            padding: 6px 12px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border: 1px solid #e9ecef;
+            cursor: pointer;
+        }
+
+        .popular-box a:hover {
+            background: #e9ecef;
+            color: #dc3545 !important;
+            border-color: #dc3545;
+        }
+
+        .popular-box .title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* الـ Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            display: none;
+        }
+
+
+
+        .search-category-group .dropdown-toggle,
+        .search-category-group .form-control {
+            border: none;
+            height: 45px;
+        }
+
+        .search-category-group .dropdown-toggle {
+            border-right: 1px solid #dee2e6 !important;
+            border-radius: 0.375rem 0 0 0.375rem;
+            background-color: #f8f9fa;
+        }
+
+        .search-category-group .form-control {
+            border-left: none;
+            border-right: none;
+        }
+
+        .search-category-group .search-btn {
+            border: none;
+            border-radius: 0 0.375rem 0.375rem 0;
+            color: white;
+            width: 60px;
+        }
+
+        /* Dropdowns */
+        .dropdown-menu {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            z-index: 1002;
+        }
+
+        .dropdown-item {
+            color: #333;
+        }
+
+        /* Hover Effects */
+        .dropdown-hover:hover .dropdown-menu {
+            display: block !important;
+            margin-top: 0;
+        }
+
+        .nav-link:hover, 
+        .hov-red:hover,
+        .dropdown-custom .dropdown-toggle:hover,
+        .categories-btn:hover,
+        .dropdown-menu:hover, 
+        .dropdown-item:hover {
+            color: red !important;
+        }
+
+
+    .container-product{
+      max-width:1200px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    .breadcrumb-wrap{
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+    .breadcrumb-wrap a{ color:var(--muted); text-decoration:none }
+
+    .product-grid{
+      display: flex;
+    
+      gap:28px;
+     
+    }
+
+    /* thumbnails column (left) */
+    .thumbs-col{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .thumbs-col .thumb{
+      width:72px;
+      height:72px;
+      border-radius:8px;
+      overflow:hidden;
+      border:2px solid transparent;
+      background:#fff;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all .18s ease;
+      box-shadow:0 2px 8px rgba(14,14,14,.03);
+    }
+    .thumbs-col .thumb.active{
+      border-color:#111;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block }
+
+    /* main image area */
+    .gallery{
+      background:#fff;
+      border-radius:var(--card-radius);
+      padding:18px;
+      position:relative;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .discount-badge{
+      position:absolute;
+      top:18px;
+      left:18px;
+      background:var(--accent);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:700;
+      z-index:30;
+      box-shadow:0 6px 18px rgba(0,0,0,.12);
+    }
+    .fullscreen-btn{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:#fff;
+      border-radius:8px;
+      width:44px;height:44px;
+      display:flex;align-items:center;justify-content:center;
+      border:1px solid rgba(0,0,0,.06);
+      cursor:pointer;
+      z-index:30;
+    }
+
+    .main-image{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:540px;
+      border-radius:8px;
+      overflow:hidden;
+    }
+    .main-image img{
+      width:auto;
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      transition:transform .35s ease;
+    }
+    .main-image:hover img{ transform: scale(1.06) }
+
+    /* right info column */
+    .info-card{
+      background:#fff;
+      border-radius:var(--card-radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .brand{ color:var(--muted); font-size:14px }
+    .title{ font-size:26px; font-weight:800; margin-top:6px }
+    .rating{ color:#000; margin:8px 0; display:flex; gap:10px; align-items:center }
+    .features{ margin:12px 0 18px; list-style:none; padding:0; color:var(--muted) }
+    .features li{ margin:8px 0 }
+
+    .price-row{ display:flex; align-items:center; gap:14px; margin:16px 0 }
+    .price-now{ font-size:28px; font-weight:800 }
+    .price-old{ text-decoration:line-through; color:var(--muted) }
+    .save{ color:var(--accent); font-weight:700 }
+
+    .stock-pill{ background:#e9f7ef; color:#227a4a; padding:6px 10px; border-radius:8px; font-size:13px; display: inline; }
+
+    /* countdown/boxes */
+    .boxes{ display:flex; gap:10px; margin:10px 0 18px }
+    .box{
+      background:var(--accent);
+      color:#fff;
+      padding:8px 14px;
+      border-radius:8px;
+      font-weight:700;
+      min-width:48px;
+      text-align:center;
+    }
+
+    /* qty + buttons */
+    .action-row{ display:flex; gap:12px; align-items:center; margin:18px 0;bottom: 0; left: 0; width: 100% ; }
+    .qty{
+      display:flex; align-items:center; gap:6px;
+      border-radius:8px; overflow:hidden; border:1px solid #e6e6e6;
+      background:#fff;
+    }
+    .qty button{ width:40px; height:40px; border:none; background:#f3f3f3; cursor:pointer }
+    .qty input{ width:50px; height:40px; border:none; text-align:center; font-weight:700; }
+
+    .btn-add{
+      background:#0b0b0b; color:#fff; border:none; padding:12px 18px; border-radius:8px; font-weight:700;
+      cursor:pointer; flex:1;
+    }
+    .btn-buy{
+      background:var(--accent); color:#fff; border:none; padding:12px 18px; border-radius:8px; font-weight:700;
+      cursor:pointer; width:140px;
+    }
+
+    .meta{ color:var(--muted); font-size:14px; margin-top:18px; border-top:1px solid #f0f0f0; padding-top:14px }
+    .meta .tags{ display:flex; gap:10px; flex-wrap:wrap }
+
+    .socials{ display:flex; gap:12px; margin-top:10px; color:var(--muted) }
+    .socials a{ color:var(--muted); text-decoration:none; font-size:18px }
+
+    /* responsiveness */
+    @media (max-width: 1100px){
+      .product-grid{ grid-template-columns: 100px 1fr; grid-auto-rows:auto; }
+      .info-card{ grid-column:1 / -1; order:3; margin-top:10px }
+      .gallery{ grid-column:2 / -1; }
+    }
+    @media (max-width:720px){
+      .product-grid{ grid-template-columns:1fr; }
+      .thumbs-col{ flex-direction:row; justify-content:center }
+      .thumbs-col .thumb{ width:56px;height:56px }
+      .main-image{ height:420px }
+    }
+    
+
+        /* Featured Products Section */
+        .products-section-new {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .products-container-new {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .products-container-new:hover .next-btn-new,
+        .products-container-new:hover .prev-btn-new {
+            display: block !important;
+        }
+
+        .products-wrapper-new {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+            gap: 0;
+        }
+
+        .products-wrapper-new::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-card-new {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            width: 280px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .product-card-new:last-child {
+            border-right: none;
+        }
+
+        .product-card-new:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .discount-badge-new {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff4757;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image-new {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card-new:hover .product-image-new {
+            transform: scale(1.05);
+        }
+
+        .product-icons-new {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+        }
+
+        .product-card-new:hover .product-icons-new {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .icon-new {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .icon-new:hover {
+            background: #000000;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-info-new {
+            padding: 20px;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-name-new {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2d3436;
+            line-height: 1.4;
+        }
+
+        .product-price-new {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price-new {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .original-price-new {
+            font-size: 1rem;
+            color: #a0a0a0;
+            text-decoration: line-through;
+        }
+
+        .rating-new {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .stars-new {
+            color: black;
+        }
+
+        .rating-count-new {
+            color: #7a7a7a;
+            font-size: 0.9rem;
+        }
+
+        .nav-btn-new {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            color: #000000;
+            cursor: pointer;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn-new:hover {
+            background: #000000;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn-new {
+            right: -15px;
+        }
+
+        .next-btn-new {
+            left: -15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 300px;
+            }
+            
+            .side-card {
+                height: 150px;
+            }
+
+            .carousel-container .text-content {
+                width: 60%;
+                padding: 10px;
+            }
+            
+            .carousel-container .text-content p {
+                font-size: 12px;
+            }
+            
+            .carousel-container .text-content h3 {
+                font-size: 18px;
+            }
+            
+            .carousel-container .text-content h5 {
+                font-size: 14px;
+            }
+            
+            .slide-btn {
+                padding: 6px 15px;
+                font-size: 12px;
+            }
+            
+            .side-card .text-content {
+                padding: 10px;
+            }
+            
+            .side-card .text-content p {
+                font-size: 10px;
+            }
+            
+            .side-card .text-content h3 {
+                font-size: 14px;
+            }
+            
+            .side-card .text-content h5 {
+                font-size: 12px;
+            }
+            
+            .side-btn {
+                padding: 5px 12px;
+                font-size: 10px;
+            }
+
+            .product-card {
+                flex: 0 0 150px;
+                height: 150px;
+                width: 150px;
+            }
+
+            .products-track {
+                width: calc(150px * 16);
+                animation: scroll 20s linear infinite;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-150px * 8));
+                }
+            }
+            
+            .nav-btn-new {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .prev-btn-new {
+                right: -15px;
+            }
+            
+            .next-btn-new {
+                left: -15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .carousel-container {
+                height: 250px;
+            }
+            
+            .side-card {
+                height: 120px;
+            }
+            
+            .carousel-container .text-content {
+                width: 70%;
+            }
+            
+            .carousel-container .text-content p {
+                font-size: 10px;
+                margin-bottom: 5px;
+            }
+            
+            .carousel-container .text-content h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .carousel-container .text-content h5 {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            
+            .slide-btn {
+                padding: 5px 12px;
+                font-size: 10px;
+            }
+            
+            .side-card .text-content {
+                padding: 8px;
+            }
+            
+            .side-card .text-content p {
+                font-size: 8px;
+                margin-bottom: 3px;
+            }
+            
+            .side-card .text-content h3 {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            
+            .side-card .text-content h5 {
+                font-size: 10px;
+                margin-bottom: 8px;
+            }
+            
+            .side-btn {
+                padding: 4px 10px;
+                font-size: 8px;
+            }
+        }
+
+        /* Large Screen Improvements */
+        @media (min-width: 576px) {
+            .carousel-container {
+                height: 500px;
+            }
+            
+            .side-card {
+                height: 240px;
+            }
+            
+            .carousel-container .text-content p {
+                font-size: 18px;
+            }
+            
+            .carousel-container .text-content h3 {
+                font-size: 36px;
+            }
+            
+            .carousel-container .text-content h5 {
+                font-size: 24px;
+            }
+            
+            .slide-btn {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            
+            .side-card .text-content p {
+                font-size: 14px;
+            }
+            
+            .side-card .text-content h3 {
+                font-size: 20px;
+            }
+            
+            .side-card .text-content h5 {
+                font-size: 16px;
+            }
+            
+            .side-btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+/* لكي يعمل التنسيق بشكل جيد داخل حاوية Bootstrap */
+.product-page {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* شريط العرض الترويجي */
+.promo-banner {
+    background-color: #e6ffe6; /* لون أخضر فاتح مطابق للصورة */
+}
+
+/* تنسيقات الأزرار والشعارات */
+.view-more-btn {
+    /* للحفاظ على مظهر الزر كما في الصورة (لون خلفية أخضر مختلف عن الافتراضي) */
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+    font-weight: bold;
+}
+
+
+/* علامات التبويب (Bootstrap Override) */
+.nav-tabs {
+    border-bottom: 2px solid #eee;
+}
+
+.nav-tabs .nav-link {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    position: relative;
+    color: #666;
+    margin-left: 15px; 
+}
+
+.nav-tabs .nav-link.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000 !important; /* الخط الأسود تحت التبويب النشط */
+    background-color: transparent !important;
+}
+
+/* الجداول (تنسيق مخصص) */
+/* تخصيص لون الخلفية للصفوف المضيئة في جدول Shipping */
+.shipping-info .bg-light-subtle {
+    background-color: #f9f9f9 !important;
+}
+
+.shipping-info .light-row .bg-light {
+    background-color: #f3f3f3 !important;
+}
+
+.shipping-info th {
+    font-weight: normal;
+    color: #555;
+    width: 30%;
+}
+
+   /* Products Section */
+        .products-section {
+            padding: 40px 0;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #333;
+            font-size: 2rem;
+            position: relative;
+        }
+
+    
+
+        .products-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .products-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: calc(200px * 16);
+        }
+
+        .product-card {
+            text-align: center;
+            flex: 0 0 200px;
+            margin: 0 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 200px;
+            width: 200px;
+        }
+
+        .product-card .position-relative {
+            margin: 0 auto;
+            width: 80%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            filter: brightness(0.7);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .arrow-icon {
+            color: white;
+            font-size: 2rem;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .arrow-icon {
+            transform: translateX(0);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 8));
+            }
+        }    /* Products Section */
+        .products-section {
+            padding: 40px 0;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #333;
+            font-size: 2rem;
+            position: relative;
+        }
+
+    
+
+        .products-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .products-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: calc(200px * 16);
+        }
+
+        .product-card {
+            text-align: center;
+            flex: 0 0 200px;
+            margin: 0 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 200px;
+            width: 200px;
+        }
+
+        .product-card .position-relative {
+            margin: 0 auto;
+            width: 80%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            filter: brightness(0.7);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .arrow-icon {
+            color: white;
+            font-size: 2rem;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .arrow-icon {
+            transform: translateX(0);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 8));
+            }
+        }
+/* أشرطة التقييم */
+.rating-bars .progress-bar {
+    background-color: black !important; /* جعل شريط التقدم أسود */
+}
+
+/* تنسيق المراجعات */
+.review-summary .rating-number {
+    color: #333;
+}
+
+.review-summary .fa-star,
+.user-review .fa-star {
+    color: black !important;
+}
+
+/* قسم إضافة مراجعة */
+.add-review-section {
+    background-color: #fcfcfc !important;
+}
+
+
+        .merco-footer {
+            background-color: #24292e; /* لون الخلفية الداكن */
+            color: #a7a7a7; /* لون النص الافتراضي */
+            font-family: Arial, sans-serif;
+        }
+
+        /* تنسيق المحتوى الرئيسي */
+        .footer-main-content {
+            padding: 60px 0;
+            border-bottom: 1px solid #333940;
+        }
+        
+        /* تنسيق الشعار ومعلومات الاتصال */
+        .footer-logo {
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-info address,
+        .contact-info p {
+            font-style: normal;
+        }
+
+        .contact-info a {
+            color: #a7a7a7;
+            text-decoration: none;
+            display: block;
+        }
+
+        .phone-number {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* تنسيق العناوين الرئيسية للأقسام */
+        .merco-footer h3 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* تنسيق قوائم الروابط */
+        .merco-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .merco-footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .merco-footer ul a {
+            color: #a7a7a7;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .merco-footer ul a:hover {
+            color: #fff;
+        }
+
+        /* تنسيق قسم "Let's keep in touch" */
+        .newsletter {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #a7a7a7;
+            padding-bottom: 5px;
+        }
+
+        .newsletter input {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            padding: 5px 0;
+            flex-grow: 1;
+            outline: none;
+        }
+
+        .newsletter input::placeholder {
+            color: #a7a7a7;
+        }
+
+        .newsletter button {
+            background: none;
+            border: none;
+            color: #a7a7a7;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 0;
+            margin-left: 10px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: #a7a7a7;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        /* شريط الدعم (Support Bar) */
+        .footer-support-bar {
+            background-color: #1e2225; /* خلفية أغمق قليلاً */
+            padding: 30px 0;
+        }
+
+        .support-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .support-item i {
+            font-size: 30px;
+            color: #fff;
+            margin-right: 15px;
+        }
+
+        .support-item h4 {
+            color: #fff;
+            font-size: 15px;
+            margin: 0 0 5px 0;
+            font-weight: normal;
+        }
+
+        .support-link {
+            color: #a7a7a7;
+            text-decoration: none;
+            font-size: 13px;
+            border-bottom: 1px solid #a7a7a7;
+            padding-bottom: 2px;
+        }
+        
+        /* الشريط السفلي (Bottom Bar) */
+        .footer-bottom-bar {
+            padding: 20px 0;
+            font-size: 13px;
+        }
+
+        .payment-methods span {
+            /* هذه رموز dummy، يجب استبدالها بصور حقيقية */
+            display: inline-block;
+          
+            margin-left: 5px;
+            font-size: 30px;
+        }
+        
+        /* تنسيق الجزء العلوي (اختياري) */
+        .header-content {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 400px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        .search-box button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .tag-list span {
+            display: inline-block;
+            background-color: #d1e7ff;
+            color: #0d6efd;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 5px;
+        }
+
+  </style>
+</head>
+<body>
+
+    
+
+    
+<div class="overlay" id="overlay"></div>
+    
+    <!-- Top Bar -->
+    <div class="top-bar py-2 w-100 d-none d-md-block d-lg-none">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                 <div class="col-md-6 text-md-end">
+                    <div class="d-flex ">
+                        <div class="dropdown dropdown-hover me-3">
+                            <button class="btn dropdown-toggle p-0 hov-red" type="button"
+                                style="background: none; color: white; border: none; font-size: 0.8rem;">
+                                English
+                            </button>
+                            <ul class="dropdown-menu hov-red">
+                                <li><img src="espanol.png" alt=""><a class="dropdown-item" href="#">Espanol</a></li>
+                                <li><a class="dropdown-item" href="#">French</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown dropdown-hover">
+                            <button class="btn dropdown-toggle p-0 hov-red" type="button"
+                                style="background: none; color: white; border: none; font-size: 0.8rem;">
+                                USD
+                            </button>
+                            <ul class="dropdown-menu hov-red">
+                                <li><a class="dropdown-item" href="#">EUR</a></li>
+                                <li><a class="dropdown-item" href="#">GBP</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-md-end align-items-center hov-red">
+                        <span class="me-3">
+                           Contact us 24/7   (+92) 3942 7879
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light navbar-custom w-100">
+        <div class="container-fluid">
+            <button class="btn d-md-none d-xs-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-start  d-md-none d-xs-block" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Try scrolling the rest of the page to see this option in action.</p>
+                </div>
+            </div>
+
+            <a class="navbar-brand fw-bold me-4" href="#">Metro</a>
+            
+            <div class="d-none d-lg-block me-4 hov-red">
+                <span style="font-size: 0.9rem;">
+                    <i class="fas fa-phone-alt me-1"></i> (+92) 3942 7879
+                </span>
+            </div>
+
+            <div class="d-flex flex-grow-1 me-3 position-relative nav-search">
+                <form class="w-100" role="search">
+                    <div class="search-container">
+                        <div class="input-group search-category-group mx-auto">
+                            <div class="dropdown dropdown-hover">
+                                <button class="btn dropdown-toggle" type="button"
+                                    style="font-size: 0.9rem; padding: 0.375rem 0.75rem;">
+                                    All Categories
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                    <li><a class="dropdown-item" href="#">Fashion</a></li>
+                                    <li><a class="dropdown-item" href="#">Home & Garden</a></li>
+                                    <li><a class="dropdown-item" href="#">Sports</a></li>
+                                    <li><a class="dropdown-item" href="#">Books</a></li>
+                                </ul>
+                            </div>
+
+                            <input class="form-control search-input bg-light" type="search" placeholder="Search for products"
+                                style="font-size: 0.9rem;" id="searchInput">
+
+                            <button class="btn search-btn btn-dark" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- صندوق الاقتراحات الشائعة -->
+                        <div class="popular-box" id="popularBox">
+                            <p class="title">Popular Search</p>
+                            <div id="suggestionsList" class="suggestionsList">
+                                <a>smart phone</a>
+                                <a>tablet</a>
+                                <a>laptop</a>
+                                <a>fashion</a>
+                                <a>home & decor</a>
+                                <a>electronics</a>
+                                <a>sports</a>
+                                <a>books</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <div class="dropdown dropdown-hover me-3 d-md-none d-lg-block hov-red">
+                    <button class="btn dropdown-toggle hov-red" type="button"
+                        style="background: none; border: none; font-size: 0.9rem; padding: 0.25rem 0.5rem;">
+                        English
+                    </button>
+                    <ul class="dropdown-menu hov-red">
+                        <li><a class="dropdown-item" href="#">Arabic</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                        <li><a class="dropdown-item" href="#">Spanish</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown dropdown-hover me-3 d-none d-lg-block hov-red">
+                    <button class="btn dropdown-toggle" type="button"
+                        style="background: none; border: none; font-size: 0.9rem; padding: 0.25rem 0.5rem;">
+                        USD
+                    </button>
+                    <ul class="dropdown-menu hov-red">
+                        <li><a class="dropdown-item" href="#">EUR</a></li>
+                        <li><a class="dropdown-item" href="#">GBP</a></li>
+                        <li><a class="dropdown-item" href="#">JPY</a></li>
+                    </ul>
+                </div>
+
+                <a href="#" class="text-decoration-none me-3 hov-red" style="font-size: 0.9rem;">
+                    <i class="fas fa-user me-1"></i> Account
+                </a>
+            </div>
+            
+            <div>
+                <a href="#" class="position-relative me-3 hov-red" style="font-size: 1.1rem;">
+                    <i class="far fa-heart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                        style="background-color: red; font-size: 0.6rem;">
+                        0
+                    </span>
+                </a>
+                
+                <a href="#" class="position-relative hov-red" style="font-size: 1.1rem;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                        style="background-color: red; font-size: 0.6rem;">
+                        0
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="container-product">
+
+  <nav class="breadcrumb-wrap" aria-label="breadcrumb">
+    <a href="#">Home</a> &nbsp;›&nbsp;
+    <a href="#">Shop</a> &nbsp;›&nbsp;
+    <a href="#">Autopart</a> &nbsp;›&nbsp;
+    <a href="#">Wheels</a> &nbsp;›&nbsp;
+    <strong>High-Performance Carbon Fiber Wheels</strong>
+  </nav>
+
+  <div class="product-grid">
+
+    <!-- THUMBNAILS COLUMN -->
+    <div class="thumbs-col">
+      <!-- thumbnails use same local image - replace src if you have distinct images -->
+      <div class="thumb active" data-index="0"><img src="imgi_63_autopart-20.jpg" alt=""></div>
+      <div class="thumb" data-index="1"><img src="imgi_20_automotive-13.jpg" alt=""></div>
+      <div class="thumb" data-index="2"><img src="imgi_61_autopart-14.jpg" alt=""></div>
+      <div class="thumb" data-index="3"><img src="imgi_62_autopart-19.jpg" alt=""></div>
+    </div>
+
+    <!-- MAIN GALLERY -->
+    <div class="gallery">
+      <div class="discount-badge">-17%</div>
+      <div class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
+        <i class="fa-solid fa-expand"></i>
+      </div>
+
+      <div class="main-image" id="mainImageWrap">
+        <img id="mainImage" src="imgi_63_autopart-20.jpg" alt="Product main">
+      </div>
+    </div>
+
+    <!-- RIGHT INFO -->
+    <div class="info-card">
+      <div class="brand">Toyota</div>
+      <div class="title">High-Performance Carbon Fiber Wheels</div>
+
+      <div class="rating">
+        <div >★★★★★</div>
+        <div style="color:var(--muted);font-size:13px">5.00 (1 Review) · <a href="#" style="text-decoration:underline;color:var(--muted)">Write a review</a></div>
+      </div>
+
+      <ul class="features">
+        <li>✓ Direct Replacement</li>
+        <li>✓ Trust Quality</li>
+        <li>✓ Ensure Fit</li>
+      </ul>
+
+      <div class="price-row">
+        <div class="price-now">$499</div>
+        <div class="price-old">$599</div>
+        <div class="save">(Save $100)</div>
+      </div>
+
+      <div class="boxes" aria-hidden="true">
+        <div class="box">
+            <div class="time-value" id="days">00</div>
+          
+        </div>
+        <div class="box">
+            <div class="time-value" id="hours">00</div>
+           
+        </div>
+        <div class="box">
+            <div class="time-value" id="minutes">00</div>
+           
+        </div>
+        <div class="box">
+            <div class="time-value" id="seconds">00</div>
+          
+        </div>
+      </div>
+
+      <div class="stock-pill">In stock</div>
+
+      <div class="action-row">
+        <div class="qty" aria-hidden="true">
+          <button id="qtyMinus" type="button">−</button>
+          <input id="qtyInput" type="text" value="1" aria-label="Quantity">
+          <button id="qtyPlus" type="button">+</button>
+        </div>
+
+        <button class="btn-add" id="addToCartBtn">+ ADD TO CART</button>
+        <button class="btn-buy" id="buyNowBtn">BUY NOW</button>
+      </div>
+
+      <div style="display:flex;gap:14px;color:var(--muted);font-size:14px">
+        <div style="display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#d0d0d0" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4A5.5 5.5 0 0 1 12 8.5 5.5 5.5 0 0 1 17.5 4 4.48 4.48 0 0 1 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> Add to wishlist</div>
+        <div style="display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#d0d0d0" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg> Add to compare</div>
+      </div>
+
+      <div class="meta">
+        <div>SKU: <strong>5YYTX8N686</strong></div>
+        <div style="margin-top:6px">Categories: <span style="color:#111; font-weight:600">Autopart, Wheels</span></div>
+
+        <div class="socials">
+          <a href="#" title="facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" title="pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" title="x"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" title="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal fullscreen image -->
+<div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content" style="background:rgba(0,0,0,0.9); border:none">
+      <div class="modal-body d-flex justify-content-center align-items-center">
+        <img id="modalImg" src="imgi_20_automotive-13.jpg" style="max-width:95%; max-height:95%; object-fit:contain; border-radius:8px;">
+      </div>
+      <button type="button" class="btn-light position-absolute" data-bs-dismiss="modal" style="right:18px; top:18px;"><i class="fa-solid fa-x"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<section>
+
+    <div class="product-page container my-4">
+        <div class="promo-banner p-3 mb-4 rounded d-flex justify-content-between align-items-center">
+            <div class="banner-content">
+                <h3 class="fs-5 fw-bold mb-1">Earn Cash Back For The Things You Buy Every Where</h3>
+                <p class="mb-0 small">Application via Merto. <a href="#" class="text-success text-decoration-none">Terms & Conditions.</a></p>
+            </div>
+            <button class="btn btn-success view-more-btn">VIEW MORE</button>
+            <div class="w-xs-100 ">
+                <img src="imgi_27_payments-2-1.png" alt="">
+                </div>
+        </div>
+
+        <div class="tabs-container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="specifications-tab" data-bs-toggle="tab" data-bs-target="#specifications" type="button" role="tab" aria-controls="specifications" aria-selected="false">Specifications</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews (1)</button>
+                </li>
+            </ul>
+
+            <div class="tab-content pt-3" id="myTabContent">
+                
+                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                    <div class="row description-section">
+                        <div class="col-lg-7 col-md-12">
+                            <p class="main-description">
+                                Compellingly grow performance based mindshare through parallel potentialities. Rapidiously overwhelm top-line catalysts for change before best-of-breed materials. Competently brand timely catalysts for change through sustainable systems. Completely expedite ubiquitous bandwidth after integrated action items. Progressively transform leading-edge supply chains whereas flexible niche markets.
+                            </p>
+                        </div>
+                        <div class="col-lg-5 col-md-12 shipping-info">
+                            <table class="table table-borderless table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th class="bg-light-subtle">Shipping</th>
+                                        <td>We currently offer free shipping worldwide on all orders over $100.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sizing</th>
+                                        <td>Fits true to size. Do you need size advice?</td>
+                                    </tr>
+                                    <tr class="light-row">
+                                        <th class="bg-light">Return & exchange</th>
+                                        <td class="bg-light">If you are not satisfied with your purchase you can return it to us within 14 days for an exchange or refund.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Assistance</th>
+                                        <td>Contact us on **(+44) 555 88 65**, or email us at **support@themesky.com**</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="specifications" role="tabpanel" aria-labelledby="specifications-tab">
+                    <div class="specifications-table">
+                         <table class="table table-striped table-borderless">
+                            <tbody>
+                                <tr><th>Drive</th><td>Hydraulic</td></tr>
+                                <tr><th>Vehicle Type</th><td>Light Vehicle</td></tr>
+                                <tr><th>Material</th><td>Mild Steel</td></tr>
+                                <tr><th>Type</th><td>Floor Jack</td></tr>
+                                <tr><th>Weight</th><td>1960 Hundredths Pounds</td></tr>
+                                <tr><th>Item Weight</th><td>19.6 lbs.</td></tr>
+                                <tr><th>Max Height</th><td>351 - 400mm</td></tr>
+                                <tr><th>Thickness</th><td>10 - 20mm</td></tr>
+                                <tr><th>Country of Origin</th><td>Made in India</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 mb-4">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <div class="rating-number display-4 fw-bold">5.00</div>
+                                <div class="stars-summary mb-1">
+                                    <i class="fas fa-star text-dark"></i>
+                                    <i class="fas fa-star text-dark"></i>
+                                    <i class="fas fa-star text-dark"></i>
+                                    <i class="fas fa-star text-dark"></i>
+                                    <i class="fas fa-star text-dark"></i>
+                                </div>
+                                <p class="small text-muted">Based on 1 review</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-8">
+                            <div class="rating-bars">
+                                <div class="d-flex align-items-center mb-2">5 <i class="fas fa-star text-muted mx-2"></i> <div class="progress flex-grow-1" style="height: 5px;"><div class="progress-bar bg-dark" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div> <span class="ms-2">1</span></div>
+                                <div class="d-flex align-items-center mb-2">4 <i class="fas fa-star text-muted mx-2"></i> <div class="progress flex-grow-1" style="height: 5px;"><div class="progress-bar bg-dark" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div> <span class="ms-2">0</span></div>
+                                <div class="d-flex align-items-center mb-2">3 <i class="fas fa-star text-muted mx-2"></i> <div class="progress flex-grow-1" style="height: 5px;"><div class="progress-bar bg-dark" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div> <span class="ms-2">0</span></div>
+                                <div class="d-flex align-items-center mb-2">2 <i class="fas fa-star text-muted mx-2"></i> <div class="progress flex-grow-1" style="height: 5px;"><div class="progress-bar bg-dark" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div> <span class="ms-2">0</span></div>
+                                <div class="d-flex align-items-center mb-2">1 <i class="fas fa-star text-muted mx-2"></i> <div class="progress flex-grow-1" style="height: 5px;"><div class="progress-bar bg-dark" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div></div> <span class="ms-2">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="user-review d-flex align-items-start py-3">
+                        <div class="reviewer-avatar me-3">
+                             <img src="john-avatar.png" alt="John's avatar" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                        </div>
+                        <div class="review-details flex-grow-1">
+                            <div class="review-header d-flex align-items-center mb-1">
+                                <div class="stars-inline me-3">
+                                    <i class="fas fa-star text-dark small"></i>
+                                    <i class="fas fa-star text-dark small"></i>
+                                    <i class="fas fa-star text-dark small"></i>
+                                    <i class="fas fa-star text-dark small"></i>
+                                    <i class="fas fa-star text-dark small"></i>
+                                </div>
+                                <span class="text-muted small">John</span>
+                                <span class="text-muted small mx-2">|</span>
+                                <span class="review-date text-muted small">July 17, 2024</span>
+                            </div>
+                            <h4 class="review-title fs-6 fw-bold">Feels good</h4>
+                            <p class="review-text text-secondary">The wrap looks and feels nice especially the suede. It was my first time doing this and some spots were not closed tight. I think I will redo it now with the experience, and it will come out better.</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="add-review-section p-4 bg-light rounded">
+                        <h3 class="fs-5 fw-bold mb-3">Add a review</h3>
+                        <p class="required-note small text-muted">Your email address will not be published. Required fields are marked <span class="text-danger">*</span></p>
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="rating" class="form-label fw-bold">Your rating <span class="text-danger">*</span></label>
+                                <div class="rating-input">
+                                    <i class="far fa-star text-secondary fs-4 me-1" role="button"></i>
+                                    <i class="far fa-star text-secondary fs-4 me-1" role="button"></i>
+                                    <i class="far fa-star text-secondary fs-4 me-1" role="button"></i>
+                                    <i class="far fa-star text-secondary fs-4 me-1" role="button"></i>
+                                    <i class="far fa-star text-secondary fs-4 me-1" role="button"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="photos" class="form-label fw-bold">Choose pictures (maxsize: 50kb, max files: 2)</label>
+                                <input class="form-control" type="file" id="photos" name="photos" multiple accept="image/*">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label fw-bold">Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label fw-bold">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="review" class="form-label fw-bold">Your review <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="review" name="review" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-dark submit-review-btn">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section class="products-section-new">
+        <div class="container">
+            
+            <div class="products-container-new">
+                <button class="nav-btn-new prev-btn-new d-none">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="products-wrapper-new" id="productsWrapperNew">
+                    
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_49_electronic-1-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">20% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_50_automotive-13-300x300.jpg"
+                                alt="Laptop" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Advanced Smartphone</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$1200</span>
+                                <span class="original-price-new">$1500</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count-new">(128)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                   
+                    <div class="product-card-new">
+                        <div class="discount-badge-new">17% OFF</div>
+                        <div class="product-image-container">
+                            <img src="imgi_65_electronic-27-300x300.jpg"
+                                alt="Screen" class="product-image-new">
+                        </div>
+                        <div class="product-icons-new">
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Quick View">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="icon-new" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info-new">
+                            <h3 class="product-name-new">Gaming Laptop</h3>
+                            <div class="product-price-new">
+                                <span class="current-price-new">$2500</span>
+                                <span class="original-price-new">$3000</span>
+                            </div>
+                            <div class="rating-new">
+                                <div class="stars-new">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count-new">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="nav-btn-new next-btn-new d-none">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+   
+    <footer class="merco-footer">
+        <div class="container footer-main-content">
+            <div class="row w-100">
+                
+                <div class="col-lg-3 col-md-12 mb-4 contact-info">
+                    <h2 class="footer-logo">Merto</h2>
+                    <address>
+                        25 SE 2nd Ave. Miami <br>
+                        Florida 33131, United States
+                    </address>
+                    <p>
+                        <a href="mailto:info@example.com">info@example.com</a>
+                    </p>
+                    <p class="phone-number">
+                        (+92) 3942 7879
+                    </p>
+                </div>
+
+                <div class="col-lg-6 col-md-12 d-flex flex-wrap">
+
+                    <div class="col-4 mb-4"> 
+                        <h3>SHOPPING</h3>
+                        <ul class="hov-red">
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Shop by Brand</a></li>
+                            <li><a href="#">Offers</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 mb-4">
+                        <h3>INFOMATION</h3>
+                        <ul class="hov-red">
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 mb-4">
+                        <h3>ACCOUNT</h3>
+                        <ul class="hov-red">
+                            <li><a href="#">Cart</a></li>
+                            <li><a href="#">My account</a></li>
+                            <li><a href="#">My orders</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Affiliate Program</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 mb-4 keep-in-touch">
+                    <h3>Let's keep in touch</h3>
+                    <div class="newsletter">
+                        <input type="email" placeholder="enter your email address">
+                        <button aria-label="Subscribe"><i class="fas fa-arrow-right hov-red"></i></button>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-support-bar">
+            <div class="container">
+                <div class="row justify-content-around">
+                    <div class="col-lg-4 col-md-6 mb-3 support-item">
+                       <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Didn't find what you were looking for?</h4>
+                            <a href="#" class="support-link">Contact Us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-3 support-item">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <div>
+                            <h4>How can we help you today?</h4>
+                            <a href="#" class="support-link">Help Center</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-3 support-item">
+                      <i class="fa-solid fa-life-ring"></i>
+                        <div>
+                            <h4>We'd love to hear what you think!</h4>
+                            <a href="#" class="support-link">Give Feedback</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="container d-flex justify-content-between align-items-center flex-wrap">
+                <p class="copyright mb-0">
+                    Copyright © Merto. All Rights Reserved
+                </p>
+                <div class="payment-methods mt-2 mt-md-0">
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+        <i class="fa-brands fa-cc-visa"></i>
+                   <i class="fa-brands fa-cc-discover"></i>
+                    <i class="fa-brands fa-cc-jcb"></i>
+                    <i class="fa-brands fa-cc-amazon-pay"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+       
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 7);
+        
+        function updateCountdown() {
+            const now = new Date();
+            const difference = targetDate - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // تحديث كل ثانية
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+<script>
+  // Images array (example) - you can replace srcs with separate images
+  const images = [
+    'imgi_63_autopart-20.jpg',
+    'imgi_20_automotive-13.jpg',
+    'imgi_61_autopart-14.jpg',
+    'imgi_62_autopart-19.jpg'
+  ];
+
+  // Thumbnail click -> change main image
+  document.querySelectorAll('.thumb').forEach((el) => {
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+      this.classList.add('active');
+      const idx = parseInt(this.getAttribute('data-index'),10) || 0;
+      document.getElementById('mainImage').src = images[idx];
+      document.getElementById('modalImg').src = images[idx];
+    });
+  });
+
+  // Fullscreen button opens modal
+  document.getElementById('fullscreenBtn').addEventListener('click', function(){
+    const modal = new bootstrap.Modal(document.getElementById('imgModal'));
+    modal.show();
+  });
+
+  // Qty controls
+  const qtyInput = document.getElementById('qtyInput');
+  document.getElementById('qtyPlus').addEventListener('click', () => {
+    qtyInput.value = Math.max(1, parseInt(qtyInput.value||1)+1);
+  });
+  document.getElementById('qtyMinus').addEventListener('click', () => {
+    qtyInput.value = Math.max(1, parseInt(qtyInput.value||1)-1);
+  });
+
+  // Add to cart animation (simple)
+  document.getElementById('addToCartBtn').addEventListener('click', function(){
+    const btn = this;
+    btn.textContent = 'ADDED ✓';
+    btn.style.background = '#2e7d32';
+    setTimeout(()=>{ btn.textContent = '+ ADD TO CART'; btn.style.background = '#0b0b0b'; }, 1500);
+  });
+
+  // Accessibility: keyboard navigation for thumbnails
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+      autoIndex = (autoIndex + 1) % images.length;
+      document.querySelectorAll('.thumb')[autoIndex].click();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+      autoIndex = (autoIndex - 1 + images.length) % images.length;
+      document.querySelectorAll('.thumb')[autoIndex].click();
+    }
+  });
+
+
+      function setupNavigation() {
+            const prevBtn = document.querySelector('.prev-btn-new');
+            const nextBtn = document.querySelector('.next-btn-new');
+            const productsWrapper = document.getElementById('productsWrapperNew');
+            
+            if (prevBtn && nextBtn && productsWrapper) {
+                prevBtn.addEventListener('click', () => {
+                    productsWrapper.scrollBy({
+                        left: 300,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    productsWrapper.scrollBy({
+                        left: -300,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        }
+
+
+</script>
+</body>
+</html>
