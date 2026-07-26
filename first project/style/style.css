@@ -1,57 +1,100 @@
- body {
+body {
+    margin: 0;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    justify-content: center;
-    margin:10%;
-    background-image: url(../image/back.jpg);
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.85), rgba(15, 118, 110, 0.9)), url(../image/back.jpg) center/cover fixed;
+    display: grid;
+    place-items: center;
+    padding: 24px;
 }
+
 #container {
-    width: 70%;
-   justify-self: center;
-   box-shadow: 5px 5px 5px;
+    width: min(1100px, 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
- #left-box {
-    min-width: 50%;
-    width:50% ;
-    background: #1eafc2;
+
+#left-box {
+    padding: 56px 40px;
+    background: linear-gradient(180deg, #15aabf, #0f766e);
     color: white;
-    text-align: center;
 }
+
 #right-box {
-    padding: 40px;
-    text-align: center;
-    border: #ffffff;
+    padding: 56px 40px;
     background-color: #ffffff;
 }
+
+.eyebrow {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+#req {
+    color: #6b7280;
+    text-align: right;
+    margin-bottom: 16px;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
 input, textarea {
-    margin: 8px;
-    padding: 10px;
-    width: 90%;
-    background-color: #aeb4b44d;
-    border: none;
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    font: inherit;
 }
-button {
-    padding: 10px 30px;
-    color: #ffffff;
-    background:  #00bcd4;
-    border: none;
-    border-radius: 20px;
-}
+
 textarea {
-    height: 80px;
-    overflow: auto;
-    resize: none;
-} 
-  p {
-    justify-self: center;
- }
- #req {
-    justify-self: left;
- }
- span{
-   text-align: left;
-   width:100% ;
-   justify-self: left;
- }
- h1{
-    font-weight:900 ;
- }
+    min-height: 140px;
+    resize: vertical;
+}
+
+button {
+    padding: 14px 28px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    justify-self: start;
+}
+
+@media (max-width: 900px) {
+    #container {
+        grid-template-columns: 1fr;
+    }
+
+    #left-box, #right-box {
+        padding: 36px 24px;
+    }
+}
