@@ -202,10 +202,10 @@
     .breadcrumb-wrap a{ color:var(--muted); text-decoration:none }
 
     .product-grid{
-      display: flex;
-    
+      display:grid;
+      grid-template-columns:72px minmax(0, 1.1fr) minmax(320px, .9fr);
+      align-items:start;
       gap:28px;
-     
     }
 
     /* thumbnails column (left) */
@@ -232,6 +232,17 @@
       border-color:#111;
     }
     .thumb img{ width:100%; height:100%; object-fit:cover; display:block }
+    .reviewer-initials{
+      width:50px;
+      height:50px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#171717;
+      color:#fff;
+      font-weight:700;
+      font-size:15px;
+    }
 
     /* main image area */
     .gallery{
@@ -343,15 +354,17 @@
 
     /* responsiveness */
     @media (max-width: 1100px){
-      .product-grid{ grid-template-columns: 100px 1fr; grid-auto-rows:auto; }
+      .product-grid{ grid-template-columns:72px minmax(0, 1fr); grid-auto-rows:auto; }
       .info-card{ grid-column:1 / -1; order:3; margin-top:10px }
       .gallery{ grid-column:2 / -1; }
     }
     @media (max-width:720px){
-      .product-grid{ grid-template-columns:1fr; }
+      .product-grid{ grid-template-columns:1fr; gap:18px; }
       .thumbs-col{ flex-direction:row; justify-content:center }
       .thumbs-col .thumb{ width:56px;height:56px }
       .main-image{ height:420px }
+      .action-row{ flex-wrap:wrap; }
+      .btn-buy{ width:auto; flex:1; }
     }
     
 
@@ -1612,7 +1625,7 @@
 
                     <div class="user-review d-flex align-items-start py-3">
                         <div class="reviewer-avatar me-3">
-                             <img src="john-avatar.png" alt="John's avatar" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                             <div class="reviewer-initials" aria-label="John's avatar">JH</div>
                         </div>
                         <div class="review-details flex-grow-1">
                             <div class="review-header d-flex align-items-center mb-1">
