@@ -1,13 +1,24 @@
 # ArchiWeb Collection
 
-Interior and architecture themed practice pages.
+Architecture and interior design practice pages.
 
-## Included pages
-- `first project` - contact page layout
-- `second project 5` - home page with services, about, and footer sections
-- `third project` - car rental landing page and detail page
+## Preview
+Add screenshots for the main pages here.
 
-## Notes
-- Built with HTML and CSS
-- Mostly static practice work focused on layout and presentation
-- The contact page was updated to use a cleaner responsive structure
+## Description
+A small group of layout practice pages with different themes, including contact, home, and car rental screens.
+
+## Technologies
+- HTML
+- CSS
+- Font Awesome
+
+## Live Demo
+- Add your deployed link here
+
+## Files
+- `first project/index.html`
+- `second project 5/index.html`
+- `second project 5/play.html`
+- `third project/index.html`
+- `third project/detail.html`
