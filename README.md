@@ -3,7 +3,7 @@
 Architecture and interior design practice pages.
 
 ## Preview
-Add screenshots for the main pages here.
+![ArchiWeb Screenshot](assets/screenshots/desktop.png)
 
 ## Description
 A small group of layout practice pages with different themes, including contact, home, and car rental screens.
